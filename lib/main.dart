@@ -16,7 +16,7 @@ class AppTurismo extends StatelessWidget {
       title: 'Gerenciador de Pontos Turisticos',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
         useMaterial3: false,
       ),
       home: ListaTurismoPage(),

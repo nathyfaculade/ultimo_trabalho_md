@@ -279,7 +279,6 @@ class _ListaTurismoPageState extends State<ListaTurismoPage> {
       );
     }
 
-    //Abre a página de filtro
     void _abrirPaginaFiltro() async {
       final navigator = Navigator.of(context);
       final alterouValores = await navigator.pushNamed(FiltroPage.routeName);
@@ -288,7 +287,6 @@ class _ListaTurismoPageState extends State<ListaTurismoPage> {
       }
     }
 
-    //Abre a página para visualizar o ponto turisco
     void _abrirPaginaDetalhesTurismo(PontoTuristico turismo) {
       Navigator.push(
           context,
@@ -300,12 +298,10 @@ class _ListaTurismoPageState extends State<ListaTurismoPage> {
       );
     }
 
-    //Atualiza a tela de acordo com os filtros selecionados
     void _atualizarLista() async {
       setState(() {
         _carregando = true;
       });
-      //Carregar os valores do SharedPreferences
       final prefs = await SharedPreferences.getInstance();
       final campoOrdenacao =
           prefs.getString(FiltroPage.chaveCampoOrdenacao) ?? PontoTuristico.fielId;

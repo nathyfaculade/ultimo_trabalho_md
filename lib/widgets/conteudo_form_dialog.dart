@@ -45,7 +45,6 @@ class ConteudoFormDialogState extends State<ConteudoFormDialog> {
   final _localizacaoController = TextEditingController();
   final _cepController = TextEditingController();
 
-  //Inicia todas os campos
   @override
   void iniState(){
     super.initState();
@@ -73,7 +72,7 @@ class ConteudoFormDialogState extends State<ConteudoFormDialog> {
                 Text("Data: ${_dataController.text.isEmpty ? _dateFormat.format(DateTime.now()) : _dataController.text}")
               ],
             ),
-            Divider(color: Colors.white,),
+            Divider(color: Colors.purple,),
             //Campo para receber o nome do ponto turistico
             TextFormField(
               controller: _nomeController,
@@ -147,7 +146,7 @@ class ConteudoFormDialogState extends State<ConteudoFormDialog> {
                 ),
               ),
             ),
-            Divider(color: Colors.white,),
+            Divider(color: Colors.green,),
             ElevatedButton(
               child: Text('Obter Localização Atual'),
               onPressed: _obterLocalizacaoAtual,
