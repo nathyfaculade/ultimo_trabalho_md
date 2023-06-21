@@ -162,6 +162,7 @@ class _FiltroPageState extends State<FiltroPage> {
   }
 
   Future<bool> _onVoltarClick() async {
+    //Quando o usuário decide voltar para a página anterior, os valores selecionados e alterados são enviados de volta usando
     Navigator.of(context).pop(_alterouValores);
     return true;
   }

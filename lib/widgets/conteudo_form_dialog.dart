@@ -17,7 +17,7 @@ class ConteudoFormDialog extends StatefulWidget{
 }
 
 class ConteudoFormDialogState extends State<ConteudoFormDialog> {
-  final _service = CepService();
+  final _service = CepService();  //usada para receber informações do ViaCEP
   final _cepFormater = MaskTextInputFormatter(
       mask: '#####-###',
       filter: {'#' : RegExp(r'[0-9]')}
@@ -184,7 +184,7 @@ class ConteudoFormDialogState extends State<ConteudoFormDialog> {
     MapsLauncher.launchQuery(_localizacaoController.text);
   }
 
-  //Permissões permitidas
+  //É exibido a localização atual com base nas permissões permitidas
   Future<bool> _permissoesPermitidas() async {
     LocationPermission permissao = await Geolocator.checkPermission();
     if(permissao == LocationPermission.denied){
@@ -271,8 +271,6 @@ class ConteudoFormDialogState extends State<ConteudoFormDialog> {
     }
     return widgets;
   }
-
-
 
   Future<void> _findCep() async {
     if(_formKey.currentState == null || !_formKey.currentState!.validate()){

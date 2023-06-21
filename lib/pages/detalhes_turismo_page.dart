@@ -107,18 +107,6 @@ class _DetalhesTurismoPageState extends State<DetalhesTurismoPage> {
             Valor(valor: widget.pontoturistico.finalizada ? 'Sim' : 'Não'),
           ],
         ),
-        // Row(
-        //   children: [
-        //     ElevatedButton(
-        //         onPressed: _calcularDistancia,
-        //         child: Icon(Icons.map)
-        //     ),
-        //     Campo(descricao: 'Calculo de distância: '),
-        //     Valor(
-        //       valor:  'Distância $_calcularDistancia',
-        //     ),
-        //   ],
-        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -153,6 +141,8 @@ class _DetalhesTurismoPageState extends State<DetalhesTurismoPage> {
     ),
   );
 
+  //responsável por obter a localização atual e calcular a distância entre a localização atual e as
+  // coordenadas do ponto turístico.
   void _calcularDistancia(){
     _obterLocalizacaoAtual();
   }
@@ -247,6 +237,7 @@ class _DetalhesTurismoPageState extends State<DetalhesTurismoPage> {
     );
   }
 
+  // são responsaveis por abrir um app de mapa interno ou externo, mostrado a localização do ponto
   void _abrirNoMapaExterno(){
     if (widget.pontoturistico.localizacao.isEmpty) {
       return;

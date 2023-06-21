@@ -3,6 +3,7 @@ import 'package:http/http.dart';
 import '../model/cep_model.dart';
 
 class CepService{
+  // API usada para consultar os CEPs ViaCEP
   static const url_base = 'https://viacep.com.br/ws/:cep/json/';
 
   Future<Map<String, dynamic>> findCep(String cep) async{

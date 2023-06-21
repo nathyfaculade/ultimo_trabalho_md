@@ -89,7 +89,7 @@ class _MapaPageState extends State<MapaPage> {
   void _calcularDistancia() async {
     Position? localizacaoAtual = await Geolocator.getCurrentPosition();
     if (localizacaoAtual != null) {
-      double distanciaEmMetros = await Geolocator.distanceBetween(
+      double distanciaEmMetros = await Geolocator.distanceBetween( // calcula a distancia entre a localização atual e o destino
         localizacaoAtual.latitude,
         localizacaoAtual.longitude,
         widget.latitude,
